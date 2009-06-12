@@ -41,6 +41,8 @@
 #include "ui_fileview.h"
 #include "ui_patchview.h"
 
+#include <iostream>
+
 using namespace QGit;
 
 MainImpl::MainImpl(SCRef cd, QWidget* p) : QMainWindow(p) {
@@ -1598,6 +1600,12 @@ void MainImpl::ActAmend_activated() {
 	connect(this, SIGNAL(closeAllWindows()), c, SLOT(close()));
 	connect(c, SIGNAL(changesCommitted(bool)), this, SLOT(changesCommitted(bool)));
 	c->show();
+}
+
+void MainImpl::ActCheckout_activated() {
+
+  std::cout<<"blaa!!!!";
+  std::cout.flush();
 }
 
 void MainImpl::changesCommitted(bool ok) {
